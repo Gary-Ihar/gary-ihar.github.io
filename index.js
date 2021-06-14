@@ -7,7 +7,7 @@ const productQnty = getSelector('input[name="qnty"]');
 const btnSendForm = getSelector('#sendForm');
 const btnClearList = getSelector('#clearList');
 
-const URL = (() => prodURL)() // choose mode
+const url = (() => localHost)() // choose mode
 
 btnSendForm.addEventListener('click', async (event) => {
     event.preventDefault();
@@ -15,7 +15,7 @@ btnSendForm.addEventListener('click', async (event) => {
         productName: productName.value,
         productQnty: productQnty.value,
     };
-    await fetch(`${URL}/list`,{
+    await fetch(`${url}/list`,{
         method: 'POST', 
         headers: {
             'Content-Type': 'application/json'
@@ -31,7 +31,7 @@ btnSendForm.addEventListener('click', async (event) => {
 });
 
 btnClearList.addEventListener('click', () => {
-    fetch(`${URL}/clear`)
+    fetch(`${url}/clear`)
     .catch(()=>{
         console.log('что-то пошло не так, список не очистился') // TODO: обработать ошибку.
     })
@@ -39,7 +39,7 @@ btnClearList.addEventListener('click', () => {
 })
 
 function updateListItem() {
-    fetch(`${URL}/get`)    
+    fetch(`${url}/get`)    
     .then((res)=>res.json())
     .then(res=>{
         liCreator(res);
