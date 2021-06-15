@@ -1,6 +1,6 @@
 const getSelector = selectorName => document.querySelector(selectorName);
 const prodURL = 'https://app-list-server.herokuapp.com'; // prod
-const localHost = 'http://localhost:3001'; // dev
+const localHost = 'http://localhost:80'; // dev
 const ul = getSelector('.list-section__list');
 const productName = getSelector('input[name="product"]');
 const productQnty = getSelector('input[name="qnty"]');
