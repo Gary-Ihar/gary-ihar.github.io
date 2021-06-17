@@ -2,7 +2,7 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-  color: #333;
+  color: rgb(51, 51, 51);
   font-size: 25px;
 }
 
@@ -13,12 +13,12 @@ section {
 input,
 button {
   font-size: 21px;
-  color: #333;
+  color: rgb(51, 51, 51);
   padding: 5px;
   border-radius: 10px;
   outline: none;
   text-align: center;
-  background-color: seashell;
+  background-color: rgb(255, 245, 238);
 }
 
 input {
@@ -60,7 +60,7 @@ h1 {
   display: flex;
   justify-content: space-between;
   padding: 2px;
-  border-bottom: 1px solid black;
+  border-bottom: 1px solid rgb(0, 0, 0);
   margin: 20px 0;
 }
 
@@ -80,4 +80,45 @@ h1 {
 
 .form__btn-wrapper button {
   padding: 10px;
+}
+
+header {
+  position: relative;
+}
+
+header .status {
+  position: absolute;
+  top: 0;
+  right: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.status_text {
+  font-size: 10px;
+}
+
+.status_indicator {
+  display: flex;
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  margin-left: 2px;
+  background-color: rgb(255, 0, 0);
+  align-items: center;
+}
+.status_indicator::after{
+  content: 'off';
+  font-size: 10px;
+  display: block;
+  margin-left: 10px;
+}
+
+.status_on {
+  background-color: rgb(154, 205, 50);
+}
+
+.status_on::after {
+  content: 'on';
 }
