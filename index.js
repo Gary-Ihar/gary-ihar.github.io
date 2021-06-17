@@ -7,6 +7,7 @@ const productQnty = getSelector('input[name="qnty"]');
 const btnSendForm = getSelector('#sendForm');
 const btnClearList = getSelector('#clearList');
 const statusIndicator = getSelector('.status_indicator');
+
 const actions = { // as backend
     ADD_ITEM: "ADD_ITEM",
     REMOVE_ITEM: "REMOVE_ITEM",
@@ -14,13 +15,9 @@ const actions = { // as backend
     CLEAR_LIST: "CLEAR_LIST",
 };
 
-let url = localHost;
-const modeInfo = getSelector('.active_mode');
-const btnChangeMode = getSelector('#change_mode');
-
 let socketIsOpen = false;
 
-const socket = new WebSocket(url);
+const socket = new WebSocket(prodURL);
 
 socket.onopen = function() {
     socketIsOpen = true;
@@ -42,16 +39,6 @@ socket.onmessage = function(event) {
     const data = JSON.parse(event.data);
     liCreator(data);
 };
-
-btnChangeMode.addEventListener('click', () => {
-    if (modeInfo.textContent === 'off') {
-        modeInfo.textContent = 'on';
-        url = localHost;
-    } else {
-        modeInfo.textContent = 'off';
-        url = prodURL;
-    }
-});
 
 btnSendForm.addEventListener('click', (event) => {
     event.preventDefault();
