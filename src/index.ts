@@ -1,9 +1,8 @@
 // TODO: refactor TS, adn TS config rules
 
-const getSelector = (selectorName: string) =>
-	document.querySelector(selectorName);
-const prodURL = "https://app-list-server.herokuapp.com"; // prod
-const localHost = "http://localhost:80"; // dev
+import { getSelector } from "./helpers/DOM";
+import { localHost, prodURL } from "./settings";
+
 const ul = getSelector(".list-section__list");
 const productName = getSelector('input[name="product"]');
 const productQnty = getSelector('input[name="qnty"]');
