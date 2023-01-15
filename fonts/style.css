@@ -1,0 +1,26 @@
+@font-face {
+  font-family: 'Manrope';
+  src: url('./Manrope-Bold.ttf') format('truetype');
+  font-style: normal;
+  font-weight: 700;
+}
+
+@font-face {
+  font-family: 'Gilroy';
+  src: url('./Gilroy-Regular.ttf') format('truetype');
+  font-style: normal;
+  font-weight: 500;
+}
+
+@font-face {
+  font-family: 'Inter';
+  src: url('./Inter-Regular.ttf') format('truetype');
+  font-style: normal;
+  font-weight: 400;
+}
+@font-face {
+  font-family: 'Inter';
+  src: url('./Inter-Medium.ttf') format('truetype');
+  font-style: normal;
+  font-weight: 500;
+}
